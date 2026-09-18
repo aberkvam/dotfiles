@@ -9,20 +9,6 @@ set -o ignoreeof
 direnv allow
 
 
-### Set simple prompt that line wraps correctly
-
-# Show git status in prompt
-parse_git_bg() {
-  if [[ $(git status -s 2> /dev/null) ]]; then
-    echo -e "\033[0;31m"
-  else
-    echo -e "\033[0;32m"
-  fi
-}
-
-PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u@\h\[\033[0;34m\]\[\033[0;37m\]:\[\033[0;34m\]\w\[$(parse_git_bg)\]$(__git_ps1)\[\033[0;32m\]\$ \[\033[0m\]'
-
-
 ### Link to external Bitwarden SSH agent
 
 # https://dev.to/wetterkrank/ssh-agent-in-a-vs-code-devcontainer-with-a-external-terminal-49ah
