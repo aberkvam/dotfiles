@@ -22,3 +22,5 @@ SSH_AUTH_SOCK="$sock" ssh-add -l >/dev/null 2>&1 && {
     break
 }
 done
+
+export STARSHIP_CONFIG=~/dotfiles/starship.toml
